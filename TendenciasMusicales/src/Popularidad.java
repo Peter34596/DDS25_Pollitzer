@@ -1,3 +1,3 @@
 public enum Popularidad {
-    NORAMAL,EnAUGE,TENDENCIA
+    NORMAL,EnAUGE,TENDENCIA
 }

@@ -6,11 +6,15 @@ public class Album {
     private Artista artista;
     private HashSet<Cancion> canciones;
 
-    public Album(HashSet<Cancion> canciones) {
-        this.nombre = "A rush of blood to the head";
-        this.anio = 2002;
-        this.artista = new Artista();
-        this.canciones = canciones;
+    public Album(String nombre, int anio, Artista artista) {
+        this.nombre = nombre;
+        this.anio = anio;
+        this.artista = artista;
+        this.canciones = new HashSet<>();
+    }
+
+    public void agregarCancion(Cancion cancion) {
+        canciones.add(cancion);
     }
 
     public String getNombre() {
