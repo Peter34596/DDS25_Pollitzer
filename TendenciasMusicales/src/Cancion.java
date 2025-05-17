@@ -18,12 +18,57 @@ public class Cancion {
         this.ultimaReproduccion = LocalDate.now();
         this.popularidad = Popularidad.NORMAL;
     }
+    
+    public String getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(String album) {
+        this.album = album;
+    }
+
+    public int getDislikes() {
+        return dislikes;
+    }
+
+    public void setDislikes(int dislikes) {
+        this.dislikes = dislikes;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
     public Popularidad getPopularidad() {
         return this.popularidad;
     }
+    public void setPopularidad(Popularidad popularidad) {
+        this.popularidad = popularidad;
+    }
 
+    public int getReproducciones() {
+        return reproducciones;
+    }
+
+    public void setReproducciones(int reproducciones) {
+        this.reproducciones = reproducciones;
+    }
     public String getTitulo() {
         return titulo;
+    }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public LocalDate getUltimaReproduccion() {
+        return ultimaReproduccion;
+    }
+
+    public void setUltimaReproduccion(LocalDate ultimaReproduccion) {
+        this.ultimaReproduccion = ultimaReproduccion;
     }
 
     public void reproducir() {
