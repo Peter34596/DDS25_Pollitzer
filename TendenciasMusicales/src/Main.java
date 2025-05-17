@@ -1,12 +1,28 @@
 import javax.swing.*;
+import java.util.HashSet;
 
 public class Main {
+    private HashSet<Album> albums;
+
+    public Main() {
+        this.albums = new HashSet<>();
+    }
+
+    public HashSet<Album> getAlbums() {
+        return albums;
+    }
+
+    public void setAlbums(HashSet<Album> albums) {
+        this.albums = albums;
+    }
+
     public static void main(String[] args) {
+        Main main = new Main();
         Artista coldplay = new Artista("Coldplay");
         Album album = new Album("A Rush of Blood to the Head", 2002, coldplay);
-        Cancion theScientist = new Cancion("The Scientist", album.getNombre());
-
+        Cancion theScientist = new Cancion("The Scientist", album);
         album.agregarCancion(theScientist);
+        main.getAlbums().add(album);
 
         // Cancion recien salida
         System.out.println(theScientist.obtenerEstado(coldplay, album.getAnio()));

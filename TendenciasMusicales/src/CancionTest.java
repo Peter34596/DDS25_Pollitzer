@@ -5,7 +5,9 @@ public class CancionTest {
 
     @Test
     public void testReproduccionesSuperanMil() {
-        Cancion cancion = new Cancion("The Scientist", "A Rush of Blood to the Head");
+        Artista coldplay = new Artista("Coldplay");
+        Album album = new Album("A Rush of Blood to the Head", 2002, coldplay);
+        Cancion cancion = new Cancion("The Scientist", album);
         Artista artista = new Artista("Coldplay");
 
         for (int i = 0; i < 1001; i++) {
@@ -16,7 +18,9 @@ public class CancionTest {
 
     @Test
     public void testCancionBajaDeAugePorDislikes() {
-        Cancion cancion = new Cancion("The Scientist", "A Rush of Blood to the Head");
+        Artista coldplay = new Artista("Coldplay");
+        Album album = new Album("A Rush of Blood to the Head", 2002, coldplay);
+        Cancion cancion = new Cancion("The Scientist", album);
 
         for (int i = 0; i < 5000; i++) {
             cancion.agregarDislike();
@@ -26,7 +30,9 @@ public class CancionTest {
 
     @Test
     public void testCancionSubeATendencia() {
-        Cancion cancion = new Cancion("The Scientist", "A Rush of Blood to the Head");
+        Artista coldplay = new Artista("Coldplay");
+        Album album = new Album("A Rush of Blood to the Head", 2002, coldplay);
+        Cancion cancion = new Cancion("The Scientist", album);
 
         for (int i = 0; i < 50001; i++) {
             cancion.reproducir();

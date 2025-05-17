@@ -2,14 +2,14 @@ import java.time.LocalDate;
 
 public class Cancion {
     private String titulo;
-    private String album;
+    private Album album;
     private int reproducciones;
     private int likes;
     private int dislikes;
     private LocalDate ultimaReproduccion;
     private Popularidad popularidad;
 
-    public Cancion(String titulo, String album) {
+    public Cancion(String titulo, Album album) {
         this.titulo = titulo;
         this.album = album;
         this.reproducciones = 0;
@@ -18,12 +18,12 @@ public class Cancion {
         this.ultimaReproduccion = LocalDate.now();
         this.popularidad = Popularidad.NORMAL;
     }
-    
-    public String getAlbum() {
+
+    public Album getAlbum() {
         return album;
     }
 
-    public void setAlbum(String album) {
+    public void setAlbum(Album album) {
         this.album = album;
     }
 
