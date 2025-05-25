@@ -7,17 +7,16 @@ public class Normal extends Popularidad{
     protected String Leyenda(Cancion c){
         String f = "";
         f+=c.getAlbum().getArtista().getNombre();
-        f+=" ";
+        f+=" - ";
         f+=c.getAlbum().getNombre();
-        f+=" ";
+        f+=" - ";
         f+=c.getTitulo();
         return f;
     }
-    public String reproducir(Cancion c){
+    public void reproducir(Cancion c){
         this.reprosucciones++;
         if (reprosucciones>num){
             c.CambiarEstado(new EnAuge());
         }
     }
-
 }

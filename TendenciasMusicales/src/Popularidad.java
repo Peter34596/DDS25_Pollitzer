@@ -1,7 +1,7 @@
 public abstract class Popularidad {
     protected abstract String Icono();
     protected abstract String Leyenda(Cancion c);
-    public abstract String reproducir(Cancion c);
+    public abstract void reproducir(Cancion c);
     public String verDetalle(Cancion c) {
         String detalle = "";
         detalle += " ";

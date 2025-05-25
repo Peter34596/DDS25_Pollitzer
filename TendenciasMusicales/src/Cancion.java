@@ -51,10 +51,13 @@ public class Cancion {
     }
 
     public void reproducir() {
+        popularidad.reproducir(this);
     }
-    public void verDetalle() {
+    public String verDetalle() {
+        return  popularidad.verDetalle(this);
     }
     public void CambiarEstado(Popularidad p) {
+        this.popularidad = p;
     }
 
 }

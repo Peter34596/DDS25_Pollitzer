@@ -1,50 +1,58 @@
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.time.LocalDate;
 
 public class CancionTest {
+    private Cancion theScientist;
 
-    @Test
-    public void testReproduccionesSuperanMil() {
+    @BeforeEach
+    public void setUp() {
         Artista coldplay = new Artista("Coldplay");
         Album album = new Album("A Rush of Blood to the Head", 2002, coldplay);
-        Cancion cancion = new Cancion("The Scientist", album);
-        Artista artista = new Artista("Coldplay");
+        Popularidad normal = new Normal();
+        theScientist = new Cancion("The Scientist", album, 0, LocalDate.now(), normal);
+    }
 
+    @Test
+    public void testCancionInicialmenteNormal() {
+        assertTrue(theScientist.getPopularidad() instanceof Normal, "La canción no inicia con estado Normal");
+    }
+
+    @Test
+    public void testCancionPasaAEnAugePorReproducciones() {
         for (int i = 0; i < 1001; i++) {
-            cancion.reproducir();
+            theScientist.reproducir();
         }
-        assertEquals(Popularidad.EnAUGE, cancion.getPopularidad());
+        assertTrue(theScientist.getPopularidad() instanceof EnAuge, "La canción no pasó a EnAuge como se esperaba");
     }
 
     @Test
-    public void testCancionBajaDeAugePorDislikes() {
-        Artista coldplay = new Artista("Coldplay");
-        Album album = new Album("A Rush of Blood to the Head", 2002, coldplay);
-        Cancion cancion = new Cancion("The Scientist", album);
-
-        for (int i = 0; i < 5000; i++) {
-            cancion.agregarDislike();
+    public void testCancionCaeDeEnAugePorDislikes() {
+        theScientist.CambiarEstado(new EnAuge());
+        EnAuge auge = (EnAuge) theScientist.getPopularidad();
+        for (int i = 0; i < 5001; i++) {
+            auge.aniadirDislikes(theScientist);
         }
-        assertEquals(Popularidad.NORMAL, cancion.getPopularidad());
+
+        assertTrue(theScientist.getPopularidad() instanceof Normal, "La canción no volvió a Normal tras demasiados dislikes");
     }
 
     @Test
-    public void testCancionSubeATendencia() {
-        Artista coldplay = new Artista("Coldplay");
-        Album album = new Album("A Rush of Blood to the Head", 2002, coldplay);
-        Cancion cancion = new Cancion("The Scientist", album);
-
-        for (int i = 0; i < 50001; i++) {
-            cancion.reproducir();
+    public void testCancionPasaATendenciaPorLikesYReproducciones() {
+        theScientist.CambiarEstado(new EnAuge());
+        for (int i = 0; i < 49999; i++) {
+            theScientist.reproducir();
         }
-        for (int i = 0; i < 20001; i++) {
-            cancion.agregarLike();
-        }
-        assertEquals(Popularidad.TENDENCIA, cancion.getPopularidad());
+        theScientist.setLikes(20000);
+        theScientist.reproducir();
+        assertTrue(theScientist.getPopularidad() instanceof Tendencia, "La canción no alcanzó Tendencia correctamente");
     }
 
     @Test
-    public void testCancionVuelveANormalTras24Horas() {
-        System.out.println("metodo24s");
+    public void testCancionVuelveANormalDesdeTendenciaPorTiempo() {
+        theScientist.CambiarEstado(new Tendencia());
+        theScientist.reproducir(); // Se ejecuta la lógica para volver a Normal
+        assertTrue(theScientist.getPopularidad() instanceof Normal, "La canción no volvió a Normal tras la condición de tiempo");
     }
 }
