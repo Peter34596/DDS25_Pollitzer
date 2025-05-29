@@ -1,4 +1,4 @@
 package Ej1MqExpep;
 
-public class ConDinero {
+public class ConDinero extends Estado{
 }

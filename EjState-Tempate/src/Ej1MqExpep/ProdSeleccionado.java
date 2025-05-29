@@ -1,4 +1,4 @@
 package Ej1MqExpep;
 
-public class ProdSeleccionado {
+public class ProdSeleccionado extends Estado{
 }
