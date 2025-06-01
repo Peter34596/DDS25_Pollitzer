@@ -1,5 +1,6 @@
 package Ej1MqExpep;
 
 public interface Estado {
-    abstract void cambiarEstado(MaquinaExpendedora){}
+     int dineroIngresado=0;
+     void cambiarEstado(MaquinaExpendedora me);
 }

@@ -1,4 +1,8 @@
 package Ej2Bebida;
 
-public class Bebida {
+public abstract class Bebida {
+    protected abstract void HervirAgua();
+    protected abstract void SeleccionarInfucion();
+    protected abstract void Disolucion();
+    protected abstract void Endulsante();
 }

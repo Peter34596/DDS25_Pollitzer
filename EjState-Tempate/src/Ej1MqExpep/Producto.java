@@ -2,9 +2,9 @@ package Ej1MqExpep;
 
 public class Producto {
     int precio;
-    int nombre;
+    String nombre;
 
-    public Producto(int precio, int nombre) {
+    public Producto(int precio, String nombre) {
         this.precio = precio;
         this.nombre = nombre;
     }
@@ -17,11 +17,15 @@ public class Producto {
         this.precio = precio;
     }
 
-    public int getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(int nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    @Override
+    public String toString() {
+        return nombre + " ($" + precio + ")";
     }
 }

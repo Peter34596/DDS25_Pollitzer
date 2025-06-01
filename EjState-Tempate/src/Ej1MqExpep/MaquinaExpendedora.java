@@ -3,14 +3,22 @@ package Ej1MqExpep;
 import java.util.HashMap;
 
 public class MaquinaExpendedora {
-    Estado estado;
-    HashMap<Producto, Integer> stock;
-    int DinerAcumulado;
+    private Estado estado;
+    private HashMap<Integer, HashMap<Producto, Integer>> productos;
+    private int dineroAcumulado;
 
-    public MaquinaExpendedora(Estado estado, HashMap<Producto, Integer> stock, int dinerAcumulado) {
-        this.estado = estado;
-        this.stock = stock;
-        DinerAcumulado = dinerAcumulado;
+    public MaquinaExpendedora() {
+        this.estado = new SinDinero();
+        this.productos = new HashMap<>();
+        this.dineroAcumulado = 0;
+    }
+
+    public int getDineroAcumulado() {
+        return dineroAcumulado;
+    }
+
+    public void setDineroAcumulado(int dineroAcumulado) {
+        this.dineroAcumulado = dineroAcumulado;
     }
 
     public Estado getEstado() {
@@ -21,23 +29,27 @@ public class MaquinaExpendedora {
         this.estado = estado;
     }
 
-    public HashMap<Producto, Integer> getStock() {
-        return stock;
+    public  HashMap<Integer, HashMap<Producto, Integer>> getStock() {
+        return productos;
     }
 
-    public void setStock(HashMap<Producto, Integer> stock) {
-        this.stock = stock;
+    public void setStock( HashMap<Integer, HashMap<Producto, Integer>> stock) {
+        this.productos = stock;
     }
 
-    public int getDinerAcumulado() {
-        return DinerAcumulado;
+    public void cambiarEstado() {
+        estado.cambiarEstado(this);
+    }
+    public void cambiarStock(int id, Producto producto, int cantidad) {
+        if (productos.containsKey(id)) {
+            HashMap<Producto, Integer> stockeado = productos.get(id);
+            if (stockeado.containsKey(producto)) {
+                int nuevoStock = stockeado.get(producto) - cantidad;
+                stockeado.put(producto, Math.max(nuevoStock, 0));
+            }
+        }
     }
 
-    public void setDinerAcumulado(int dinerAcumulado) {
-        DinerAcumulado = dinerAcumulado;
-    }
 
-    public void cambiarStock(MaquinaExpendedora maquinaExpendedora) {}
-
-    public void cambiarEstado() {}
 }
+

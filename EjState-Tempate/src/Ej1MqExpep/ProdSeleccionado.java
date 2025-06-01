@@ -1,4 +1,11 @@
 package Ej1MqExpep;
 
-public class ProdSeleccionado extends Estado{
+import java.util.Map;
+
+public class ProdSeleccionado implements Estado {
+
+    @Override
+    public void cambiarEstado(MaquinaExpendedora me) {
+        me.setEstado(new SinDinero());
+    }
 }
