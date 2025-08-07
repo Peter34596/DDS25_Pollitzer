@@ -44,7 +44,7 @@ public class ProductoTest {
     public void comboSimpleConDescVale200(){
         DescuentoFijo descuentoDe100 = new DescuentoFijo("Desc de 100", this.comboSimple, 100.0);
         Assertions.assertEquals(200.0, descuentoDe100.precio());
-        Assertions.assertEquals(3, descuentoDe100.stock());
+        Assertions.assertEquals(3, descuentoDe100.Stock());
     }
 
     @Test

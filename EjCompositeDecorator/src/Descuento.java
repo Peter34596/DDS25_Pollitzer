@@ -1,16 +1,16 @@
 public class Descuento extends Aplicalble{
-    int valor;
+    double valor;
 
-    public Descuento(String descripcion, Producto producto, int valor) {
+    public Descuento(String descripcion, Producto producto, double valor) {
         super(descripcion, producto);
         this.valor = valor;
     }
 
-    public int getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 

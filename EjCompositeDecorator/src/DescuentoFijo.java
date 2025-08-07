@@ -1,0 +1,21 @@
+public class DescuentoFijo extends Descuento{
+
+    public DescuentoFijo(String descripcion, Producto producto, double valor) {
+        super(descripcion, producto, valor);
+    }
+
+    @Override
+    public double precio() {
+        return valor;
+    }
+
+    @Override
+    public int Stock() {
+        return 0;
+    }
+
+    @Override
+    public double precioFinal(){
+        return precio() +  getProducto().precio();
+    }
+}

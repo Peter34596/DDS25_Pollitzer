@@ -49,7 +49,7 @@ public class Combo extends Producto{
         productos.add(producto3);
     }
 
-    public void agregarProducto(Combo comboSimple, Producto piloto) {
+    public void agregarProducto(Producto comboSimple, Producto piloto) {
         productos.add(comboSimple);
         productos.add(piloto);
     }
