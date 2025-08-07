@@ -11,6 +11,6 @@ public class DescuentoFijo extends Descuento{
 
     @Override
     public int Stock() {
-        return 0;
+        return getProducto().Stock();
     }
 }

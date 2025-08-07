@@ -21,7 +21,7 @@ public class Packaging extends Aplicalble{
 
     @Override
     public int Stock() {
-        return 0;
+        return  getProducto().Stock();
     }
 
 }
