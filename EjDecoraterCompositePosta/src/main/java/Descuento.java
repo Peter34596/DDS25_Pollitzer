@@ -16,16 +16,11 @@ public class Descuento extends Aplicalble{
 
     @Override
     public double precio() {
-        return valor;
+        return getProducto().precio() - valor;
     }
 
     @Override
     public int Stock() {
         return 0;
-    }
-
-    @Override
-    public double precioFinal(){
-        return precio() +  getProducto().precio();
     }
 }

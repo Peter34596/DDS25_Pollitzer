@@ -14,5 +14,5 @@ public abstract class Aplicalble extends Producto{
         this.producto = producto;
     }
 
-    public abstract double precioFinal();
+    public abstract double precio();
 }

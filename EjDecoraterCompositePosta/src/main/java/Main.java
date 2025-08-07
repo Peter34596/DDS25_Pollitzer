@@ -33,19 +33,13 @@ public class Main {
         Descuento d1 = new Descuento("des1",pk2,150);
         Descuento d2 = new Descuento("des1",d1,1100);
 
-        System.out.println("\nPrecios Packagins");
+        System.out.println("\nPrecios con  Packagins");
         System.out.println(pk1.getDescripcion() + " precio "+ pk1.precio());
         System.out.println(pk2.getDescripcion() + " precio "+ pk2.precio());
 
-        System.out.println("\nPrecios Descuentos");
+        System.out.println("\nPrecios finales con descuentos");
         System.out.println(d1.getDescripcion() + " descuento de "+ d1.precio());
         System.out.println(d2.getDescripcion() + " descuento de "+ d2.precio());
 
-        System.out.println("\nPrecios Finales");
-        System.out.println(pk1.getDescripcion() + " precio final "+ pk1.precioFinal());
-        System.out.println(pk2.getDescripcion() + "  precio final "+ pk2.precioFinal());
-        System.out.println(d1.getDescripcion() + "  precio final "+ d1.precioFinal());
-        System.out.println(d2.getDescripcion() + " precio final "+ d2.precioFinal());
-        
     }
 }

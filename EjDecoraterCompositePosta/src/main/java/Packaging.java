@@ -16,15 +16,12 @@ public class Packaging extends Aplicalble{
 
     @Override
     public double precio() {
-        return getprecio();
+        return precio + getProducto().precio();
     }
 
     @Override
     public int Stock() {
         return 0;
     }
-    @Override
-    public double precioFinal(){
-        return precio + getProducto().precio();
-    }
+
 }
