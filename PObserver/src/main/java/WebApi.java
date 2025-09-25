@@ -1,8 +1,11 @@
 import java.util.HashSet;
 
 public class WebApi {
-
     private HashSet<Prod> libreria;
+
+    public WebApi(HashSet<Prod> libreria) {
+        this.libreria = libreria;
+    }
 
     public HashSet<Prod> getLibreria() {
         return libreria;
@@ -10,6 +13,7 @@ public class WebApi {
     public void setLibreria() {
         this.libreria=new HashSet<>();
     }
+
     public String Operacion(Prod prod){
         libreria.add(prod);
         return "Prep Prod";

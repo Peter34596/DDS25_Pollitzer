@@ -1,6 +1,21 @@
-public class AdapterApi {
+public class AdapterApi implements IAdapter {
     private WebApi webApi;
-    public String Operacion(Prod prod){
+
+    public AdapterApi(WebApi webApi) {
+        this.webApi = webApi;
+    }
+
+    public WebApi getWebApi() {
+        return webApi;
+    }
+
+    public void setWebApi(WebApi webApi) {
+        this.webApi = webApi;
+    }
+
+    @Override
+    public String operacion(Prod prod) {
         return webApi.Operacion(prod);
     }
+    
 }

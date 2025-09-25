@@ -1,4 +1,4 @@
-public class ProductoSimple extends Producto {
+public class ProductoSimple extends Producto{
     private int precio;
     private int stock;
 
@@ -7,6 +7,7 @@ public class ProductoSimple extends Producto {
     public void setPrecio(int precio) { this.precio = precio; }
     public int getStock() { return stock; }
     public void setStock(int stock) { this.stock = stock; }
-    @Override public double precio() { return getPrecio(); }
-    @Override public int Stock() { return getStock(); }
+
+    @Override public double precio(){ return getPrecio(); }
+    @Override public int Stock(){ return getStock(); }
 }

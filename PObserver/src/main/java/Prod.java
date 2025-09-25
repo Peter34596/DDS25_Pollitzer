@@ -5,6 +5,14 @@ public class Prod {
     private String desc;
     private int barCode;
 
+    public Prod(TipoProd tipoProd, double precioBase, String nombre, String desc, int barCode) {
+        this.tipoProd = tipoProd;
+        this.precioBase = precioBase;
+        this.nombre = nombre;
+        this.desc = desc;
+        this.barCode = barCode;
+    }
+
     public TipoProd getTipoProd() {
         return tipoProd;
     }

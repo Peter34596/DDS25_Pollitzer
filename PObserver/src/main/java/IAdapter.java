@@ -1,3 +1,3 @@
 public interface IAdapter {
-     String operacion();
+     String operacion(Prod prod);
 }
