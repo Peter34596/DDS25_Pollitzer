@@ -45,6 +45,9 @@ public class Main {
         // Crear sucursal
         Sucursales sucursal = new Sucursales("Sucursal Centro", "Calle Falsa 123", ventas, observers);
 
+        // Usar la variable sucursal para evitar la advertencia de variable no utilizada
+        System.out.println("Sucursal creada: " + sucursal);
+
         // Simular venta y notificar observers
         System.out.println("Precio final del producto: " + prod.PrecioFinal());
         for (IObsever obs : observers) {
