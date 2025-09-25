@@ -45,13 +45,13 @@ public class Sucursales {
         this.listObsever = listObsever;
     }
 
-    private void regProductos(Prod p) {
+    public void regProductos(Prod p) {
         for (IObsever Pv : listObsever) {
             Pv.notificacion(p);
         }
     }
 
-    private void regVentas(Prod p) {
+    public void regVentas(Prod p) {
         for (IObsever Pv : listObsever) {
             Pv.notificacion(p);
         }
