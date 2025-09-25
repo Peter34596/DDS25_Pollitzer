@@ -1,5 +1,3 @@
-import adapter.IAdapter;
-
 public class Deposito implements IObsever{
     IAdapter adapter;
     @Override

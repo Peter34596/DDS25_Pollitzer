@@ -1,5 +1,3 @@
-import Impuestos.Imp;
-
 import java.util.HashSet;
 
 public class TipoProd {

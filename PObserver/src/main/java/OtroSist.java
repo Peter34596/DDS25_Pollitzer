@@ -1,11 +1,9 @@
-package adapter.AdapterApi;
-
 import java.util.HashSet;
 
-public class WebApi {
-
+public class OtroSist {
+    
     private HashSet<Prod> libreria;
-
+    
     public HashSet<Prod> getLibreria() {
         return libreria;
     }
@@ -14,6 +12,6 @@ public class WebApi {
     }
     public String Operacion(Prod prod){
         libreria.add(prod);
-        return "Prep Prod";
+        return "contando ventas"+libreria.size();
     }
 }

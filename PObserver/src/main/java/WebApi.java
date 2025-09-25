@@ -1,11 +1,9 @@
-package adapter.otroAdpat;
-
 import java.util.HashSet;
 
-public class OtroSist {
-    
+public class WebApi {
+
     private HashSet<Prod> libreria;
-    
+
     public HashSet<Prod> getLibreria() {
         return libreria;
     }
@@ -14,6 +12,6 @@ public class OtroSist {
     }
     public String Operacion(Prod prod){
         libreria.add(prod);
-        return "contando ventas"+libreria.size();
+        return "Prep Prod";
     }
 }

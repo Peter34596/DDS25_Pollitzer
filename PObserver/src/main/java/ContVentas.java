@@ -1,5 +1,3 @@
-import adapter.IAdapter;
-
 public class ContVentas implements IObsever{
     IAdapter adapter;
     @Override

@@ -1,5 +1,3 @@
-import adapter.IAdapter;
-
 public class OfContable implements IObsever{
     IAdapter adapter;
     @Override

@@ -1,5 +1,3 @@
-package Impuestos;
-
 public class IVA implements Imp {
     @Override
     public double Calcular(double pb) {

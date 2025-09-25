@@ -1,5 +1,3 @@
-package Impuestos;
-
 public class EO implements Imp {
     double GI = 4;
     @Override

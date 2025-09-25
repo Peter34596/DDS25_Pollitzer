@@ -1,5 +1,3 @@
-package adapter.adpaterRest;
-
 import java.util.HashSet;
 
 public class Rest {
