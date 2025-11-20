@@ -1,10 +1,12 @@
 public class Evento {
     private String nombre;
     private int entradasDisp;
+    private int entradasMax;
 
-    public Evento(String evento1, int i) {
+    public Evento(String evento1, int i, int i2) {
         this.entradasDisp=i;
         this.nombre=evento1;
+        this.entradasMax=i2;
     }
 
     public String getNombre() {
@@ -25,5 +27,9 @@ public class Evento {
 
     public boolean validarEvento() {
         return true;
+    }
+
+    public int getCapacidadMaxima() {
+        return entradasMax;
     }
 }
